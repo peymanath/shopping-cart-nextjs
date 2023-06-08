@@ -6,7 +6,6 @@ import Button from "@/components/common/Button";
 import {useCart} from "@/context/Cart/cartContext";
 
 const Checkout = props => {
-    const [checkoutItems, setCheckoutItems] = useState()
     const [dataCheckout, setDataCheckout] = useState({
         totalPrice: null
     })
@@ -16,7 +15,6 @@ const Checkout = props => {
         const totalPrice = cart.cart.reduce((count, curItem) => {
             return count + parseFloat(curItem.totalPrice);
         }, 0)
-        setCheckoutItems(cart.cart || [])
         setDataCheckout({...dataCheckout, totalPrice})
     }, [cart])
 
@@ -25,21 +23,20 @@ const Checkout = props => {
         <Layout>
             <div className="container flex flex-col justify-between gap-3">
                 {
-                    checkoutItems?.length > 0 ?
+                    cart.cart?.length > 0 ?
                         <>
                             <div className="text-4xl pb-10 text-center">
                                 Checkout
                             </div>
                             <div className="flex flex-col justify-between gap-3">
                                 {
-                                    checkoutItems?.map((props) => (
+                                    cart.cart?.map((props) => (
                                         <CartItem key={props.id} {...props}/>
                                     ))
                                 }
                             </div>
                             <div
                                 className="border rounded-lg p-4 flex flex-wrap items-center justify-between gap-5 w-full">
-
                                 <p>Total Price: {dataCheckout.totalPrice} $</p>
                             </div>
                             < Link href="/">
