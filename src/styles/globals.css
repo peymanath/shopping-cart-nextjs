@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './libraries/nprogress.css';
+
+@font-face {
+    font-family: IRANSansXFaNum;
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+    src: url('../../public/assets/fonts/IRANSansXFaNum-Regular.woff2');
+}
+
+@font-face {
+    font-family: IRANSansXFaNum;
+    font-weight: 600;
+    font-style: normal;
+    font-display: fallback;
+    src: url('../../public/assets/fonts/IRANSansXFaNum-DemiBold.woff2');
+}
+
+@font-face {
+    font-family: IRANSansXFaNum;
+    font-weight: 100;
+    font-style: normal;
+    font-display: fallback;
+    src: url('../../public/assets/fonts/IRANSansXFaNum-Thin.woff2');
+}
+
+
+:root {
+    --primary: #ff6d00;
+    --primary-10: #ff6d0015;
+    --primary-50: #ff6d007e;
+    --secondary: #3c096c;
+}
+
+::-webkit-scrollbar {
+    @apply w-1.5;
+}
+
+::-webkit-scrollbar-track {
+    @apply rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-primary/10 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/20;
+}
+
+* {
+    @apply font-["IRANSansXFaNum"] scroll-smooth;
+}
