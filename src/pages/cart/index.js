@@ -19,7 +19,7 @@ const Cart = (props) => {
                 {
                     cartItems?.length > 0 ?
                         <>
-                            <div className="text-4xl py-10 text-center">
+                            <div className="text-4xl pb-10 text-center">
                                 Cart
                             </div>
                             <div className="flex flex-col justify-between gap-3">

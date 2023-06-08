@@ -13,15 +13,13 @@ const Checkout = props => {
     const [cart, dispatchCart] = useCart()
 
     useEffect(() => {
-        setCheckoutItems(cart.cart || [])
-    }, [cart])
-
-    useEffect(() => {
         const totalPrice = cart.cart.reduce((count, curItem) => {
             return count + parseFloat(curItem.totalPrice);
         }, 0)
+        setCheckoutItems(cart.cart || [])
         setDataCheckout({...dataCheckout, totalPrice})
-    }, [checkoutItems])
+    }, [cart])
+
 
     return (
         <Layout>
@@ -29,9 +27,8 @@ const Checkout = props => {
                 {
                     checkoutItems?.length > 0 ?
                         <>
-
-                            <div className="text-4xl py-10 text-center">
-                                Cart
+                            <div className="text-4xl pb-10 text-center">
+                                Checkout
                             </div>
                             <div className="flex flex-col justify-between gap-3">
                                 {

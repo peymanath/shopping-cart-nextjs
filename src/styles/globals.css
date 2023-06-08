@@ -31,13 +31,13 @@
 
 :root {
     --primary: #ff6d00;
-    --primary-10: #ff6d0015;
+    --primary-10: #fff1e6;
     --primary-50: #ff6d007e;
     --secondary: #3c096c;
 }
 
 ::-webkit-scrollbar {
-    @apply w-1.5;
+    @apply w-1.5 bg-transparent;
 }
 
 ::-webkit-scrollbar-track {
@@ -45,11 +45,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-primary/10 rounded;
+    @apply bg-primary/30 rounded;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/20;
+    @apply bg-primary/50;
 }
 
 * {

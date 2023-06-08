@@ -21,7 +21,7 @@ const ProductItem = (props) => {
             </div>
             <button className="absolute bottom-0 w-full py-2 text-center bg-primary text-white"
                     onClick={() => addToCart(props)}>
-                افزودن به سبد خرید
+                Add to cart
             </button>
         </div>
     )

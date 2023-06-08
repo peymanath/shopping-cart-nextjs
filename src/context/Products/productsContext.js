@@ -17,14 +17,15 @@ export const asyncActionHandlers = {
             dispatch({type: 'PRODUCTS_PENDING'});
             await GetProducts()
                 .then(res => {
-                    dispatch({type: 'PRODUCTS_SUCCESS', payload: res.data});
+                    setTimeout(() => {
+                        dispatch({type: 'PRODUCTS_SUCCESS', payload: res.data});
+                    }, 1500)
                 })
                 .catch(err => {
                     dispatch({type: 'PRODUCTS_REJECT', payload: err});
                 });
         },
 }
-
 export function ProductsProvider({children}) {
     const [products, dispatch] = useReducerAsync(productReducer, initialState, asyncActionHandlers);
     return (
